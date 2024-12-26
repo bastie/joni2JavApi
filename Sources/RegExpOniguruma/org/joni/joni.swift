@@ -1,0 +1,3 @@
+extension org {
+  enum joni {}
+}

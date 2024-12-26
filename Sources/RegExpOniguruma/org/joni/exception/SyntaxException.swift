@@ -17,12 +17,5 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.joni.exception;
 
-public class SyntaxException extends JOniException{
-    private static final long serialVersionUID = 7862720128961874288L;
-
-    public SyntaxException(String message) {
-        super(message);
-    }
-}
+// see JOniException

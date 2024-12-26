@@ -17,12 +17,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.joni.exception;
 
-public class JOniException extends RuntimeException{
-    private static final long serialVersionUID = -6027192180014164667L;
+import JavApi
 
-    public JOniException(String message) {
-        super(message);
+extension org.joni.exception {
+  
+  public enum JOinException : Error {
+    case InternalException (_ message : String = "InternalException")
+    case SyntaxException (_ message : String = "SyntaxException")
+    case ValueException (_ message : String = "ValueException")
+  }
+  
+  internal class JOniExceptionHelper {
+    
+    static func valueExceptionMessage (_ message : String, _ str : String) -> String {
+      return message.replaceAll("%n", str)
     }
+    
+    static func valueExceptionMessage (_ message : String, _ bytes : [UInt8], _ p : Int, _ end : Int) -> String {
+      let second = String(bytes: bytes, encoding: .utf8)?.substring(p, end)
+      return valueExceptionMessage(message, "\(second ?? "???")")
+    }
+  }
 }

@@ -17,21 +17,5 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.joni.exception;
 
-public class ValueException extends SyntaxException{
-    private static final long serialVersionUID = -196013852479929134L;
-
-    public ValueException(String message) {
-        super(message);
-    }
-
-    public ValueException(String message, String str) {
-        super(message.replaceAll("%n", str));
-    }
-
-    public ValueException(String message, byte[]bytes, int p, int end) {
-        this(message, new String(bytes, p, end - p));
-    }
-
-}
+// see JOniException

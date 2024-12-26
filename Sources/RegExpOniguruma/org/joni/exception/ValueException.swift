@@ -17,12 +17,5 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.joni.exception;
 
-public class InternalException extends JOniException{
-    private static final long serialVersionUID = -3871816465397927992L;
-
-    public InternalException(String message) {
-        super(message);
-    }
-}
+// see JOniException
