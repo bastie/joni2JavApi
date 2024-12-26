@@ -1,2 +1,7 @@
+.swiftpm
+.DS_Store
+Package.resolved
+.build
+
 target
 .tool-versions
