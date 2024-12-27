@@ -17,35 +17,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.joni.constants.internal;
-
-public enum TokenType {
-      EOT,            /* end of token */
-      RAW_BYTE,
-      CHAR,
-      STRING,
-      CODE_POINT,
-      ANYCHAR,
-      CHAR_TYPE,
-      BACKREF,
-      CALL,
-      ANCHOR,
-      OP_REPEAT,
-      INTERVAL,
-      ANYCHAR_ANYTIME,  /* SQL '%' == .* */
-      ALT,
-      SUBEXP_OPEN,
-      SUBEXP_CLOSE,
-      CC_OPEN,
-      QUOTE_OPEN,
-      CHAR_PROPERTY,    /* \p{...}, \P{...} */
-      LINEBREAK,
-      EXTENDED_GRAPHEME_CLUSTER,
-      KEEP,
-      /* in cc */
-      CC_CLOSE,
-      CC_RANGE,
-      POSIX_BRACKET_OPEN,
-      CC_AND,             /* && */
-      CC_CC_OPEN          /* [ */
+extension org.joni {
+  final class SCStackEntry : StackEntry {
+    private var E5 : Int = 0
+    
+    func setStateCheck(_ check : Int) {
+      E5 = check;
+    }
+    
+    func getStateCheck() -> Int{
+      return E5;
+    }
+  }
 }

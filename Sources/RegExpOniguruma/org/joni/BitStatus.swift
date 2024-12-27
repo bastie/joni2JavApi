@@ -17,39 +17,45 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.joni;
-
-final class BitStatus {
-    public static final int BIT_STATUS_BITS_NUM = 4 * 8;
-
-    public static int bsClear() {
-        return 0;
+extension org.joni {
+  
+  final class BitStatus {
+    public static let BIT_STATUS_BITS_NUM = 4 * 8;
+    
+    public static func bsClear() -> Int {
+      return 0;
     }
-    public static int bsAll() {
-        return -1;
+    public static func bsAll() -> Int {
+      return -1;
     }
-    public static boolean bsAt(int stats, int n) {
-        return (n < BIT_STATUS_BITS_NUM ? stats & (1 << n) : (stats & 1)) != 0;
+    public static func bsAt(_ stats : Int, _ n : Int) -> Bool {
+      return (n < BIT_STATUS_BITS_NUM ? stats & (1 << n) : (stats & 1)) != 0;
     }
-    public static int bsOnAt(int stats, int n) {
-        if (n < BIT_STATUS_BITS_NUM) {
-            stats |= (1 << n);
-        } else {
-            stats |= 1;
-        }
-        return stats;
+    public static func bsOnAt(_ oldStats : Int, _ n : Int) -> Int {
+      var stats = oldStats
+      if (n < BIT_STATUS_BITS_NUM) {
+        stats |= (1 << n);
+      } else {
+        stats |= 1;
+      }
+      return stats
     }
-    public static int bsOnAtSimple(int stats, int n) {
-        if (n < BIT_STATUS_BITS_NUM) stats |= (1 << n);
-        return stats;
+    public static func bsOnAtSimple(_ oldStats : Int, _ n : Int) -> Int {
+      var stats = oldStats
+      if (n < BIT_STATUS_BITS_NUM) {
+        stats = stats | (1 << n)
+      }
+      return stats;
     }
-
-    public static int bsOnOff(int v, int f, boolean negative) {
-        if (negative) {
-            v &= ~f;
-        } else {
-            v |= f;
-        }
-        return v;
+    
+    public static func bsOnOff(_ oldV : Int, _ f : Int, _ negative : Bool) -> Int {
+      var v = oldV
+      if (negative) {
+        v &= ~f;
+      } else {
+        v |= f;
+      }
+      return v;
     }
+  }
 }
