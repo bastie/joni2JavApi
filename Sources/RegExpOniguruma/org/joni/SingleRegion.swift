@@ -28,7 +28,7 @@ extension org.joni {
     
     public init(_ num : Int) throws{
       if (num != 1) {
-        throw java.lang.Throwable.IndexOutOufBoundsException(num)
+        throw java.lang.Throwable.IndexOutOfBoundsException(num)
       }
     }
     
@@ -51,14 +51,14 @@ extension org.joni {
     
     public override func getBeg(_ index : Int) throws -> Int {
       if (index != 0) {
-        throw java.lang.Throwable.IndexOutOufBoundsException(index);
+        throw java.lang.Throwable.IndexOutOfBoundsException(index);
       }
       return beg;
     }
     
     public override func setBeg(_ index : Int, _ value : Int) throws -> Int {
       if (index != 0) {
-        throw java.lang.Throwable.IndexOutOufBoundsException(index);
+        throw java.lang.Throwable.IndexOutOfBoundsException(index);
       }
       beg = value
       return beg
@@ -66,14 +66,14 @@ extension org.joni {
     
     public override func getEnd(_ index : Int) throws -> Int {
       if (index != 0) {
-        throw java.lang.Throwable.IndexOutOufBoundsException(index);
+        throw java.lang.Throwable.IndexOutOfBoundsException(index);
       }
       return end;
     }
     
     public override func setEnd(_ index : Int, _ value : Int) throws -> Int {
       guard index == 0 else {
-        throw java.lang.Throwable.IndexOutOufBoundsException(index)
+        throw java.lang.Throwable.IndexOutOfBoundsException(index)
       }
       end = value
       return end

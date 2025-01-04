@@ -17,36 +17,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.joni.constants.internal;
-
-public interface NodeType {
+extension org.joni.constants.internals {
+  
+  open class NodeType {
     /* node type */
-    final int  STR        = 0;
-    final int  CCLASS     = 1;
-    final int  CTYPE      = 2;
-    final int  CANY       = 3;
-    final int  BREF       = 4;
-    final int  QTFR       = 5;
-    final int  ENCLOSE    = 6;
-    final int  ANCHOR     = 7;
-    final int  LIST       = 8;
-    final int  ALT        = 9;
-    final int  CALL       = 10;
-
-    final int BIT_STR        = 1 << STR;
-    final int BIT_CCLASS     = 1 << CCLASS;
-    final int BIT_CTYPE      = 1 << CTYPE;
-    final int BIT_CANY       = 1 << CANY;
-    final int BIT_BREF       = 1 << BREF;
-    final int BIT_QTFR       = 1 << QTFR;
-    final int BIT_ENCLOSE    = 1 << ENCLOSE;
-    final int BIT_ANCHOR     = 1 << ANCHOR;
-    final int BIT_LIST       = 1 << LIST;
-    final int BIT_ALT        = 1 << ALT;
-    final int BIT_CALL       = 1 << CALL;
-
+    static let STR        = 0;
+    static let CCLASS     = 1;
+    static let CTYPE      = 2;
+    static let CANY       = 3;
+    static let BREF       = 4;
+    static let QTFR       = 5;
+    static let ENCLOSE    = 6;
+    static let ANCHOR     = 7;
+    static let LIST       = 8;
+    static let ALT        = 9;
+    static let CALL       = 10;
+    
+    static let BIT_STR        = 1 << STR;
+    static let BIT_CCLASS     = 1 << CCLASS;
+    static let BIT_CTYPE      = 1 << CTYPE;
+    static let BIT_CANY       = 1 << CANY;
+    static let BIT_BREF       = 1 << BREF;
+    static let BIT_QTFR       = 1 << QTFR;
+    static let BIT_ENCLOSE    = 1 << ENCLOSE;
+    static let BIT_ANCHOR     = 1 << ANCHOR;
+    static let BIT_LIST       = 1 << LIST;
+    static let BIT_ALT        = 1 << ALT;
+    static let BIT_CALL       = 1 << CALL;
+    
     /* allowed node types in look-behind */
-    final int ALLOWED_IN_LB = ( BIT_LIST |
+    static let ALLOWED_IN_LB = ( BIT_LIST |
                                 BIT_ALT |
                                 BIT_STR |
                                 BIT_CCLASS |
@@ -56,11 +56,12 @@ public interface NodeType {
                                 BIT_ENCLOSE |
                                 BIT_QTFR |
                                 BIT_CALL );
-
-    final int SIMPLE =        ( BIT_STR |
+    
+    static let SIMPLE =        ( BIT_STR |
                                 BIT_CCLASS |
                                 BIT_CTYPE |
                                 BIT_CANY |
                                 BIT_BREF);
-
+    
+  }
 }
